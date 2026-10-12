@@ -1,0 +1,174 @@
+<!doctype html>
+<!-- Module 9 & 10: Introduction + Document Structure
+     <!DOCTYPE html> tells the browser this is HTML5.
+     <html> is the root element; lang helps screen readers & SEO. -->
+<html lang="en">
+  <head>
+    <!-- Module 10: <head> holds info ABOUT the page (not shown on the page) -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="HTML basics practice page - modules 9 to 16"
+    />
+    <title>HTML Basics - Modules 9 to 16</title>
+  </head>
+
+  <body id="top-of-page">
+    <!-- Module 16 + 15: Semantic elements give the page structure -->
+    <header>
+      <h1>HTML Basics Practice</h1>
+      <!-- Module 14: Hyperlinks - internal links jump to an id on the same page -->
+      <nav>
+        <a href="#text">Text</a> | <a href="#lists">Lists</a> |
+        <a href="#images">Images</a> | <a href="#links">Links</a> |
+        <a href="#structure">Structure</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ========== Module 11: Text Elements ========== -->
+      <section id="text">
+        <h2>Text Elements</h2>
+        <h3>This is a heading level 3</h3>
+        <p>
+          This is a paragraph. HTML ignores extra spaces and line breaks in the
+          code.
+        </p>
+        <p>Line break example:<br />Second line starts here.</p>
+        <p>
+          <strong>Bold (important)</strong>, <em>italic (emphasis)</em>,
+          <mark>highlighted</mark>, <small>small text</small>, H<sub>2</sub>O
+          and x<sup>2</sup>.
+        </p>
+        <hr />
+        <blockquote>
+          "Any application that can be written in JavaScript will eventually be
+          written in JavaScript."
+        </blockquote>
+        <pre>
+  Preformatted text
+      keeps   spacing.
+      </pre
+        >
+        <code>console.log("inline code");</code>
+      </section>
+
+      <!-- ========== Module 12: Lists ========== -->
+      <section id="lists">
+        <h2>Lists</h2>
+
+        <h3>Unordered list (bullets)</h3>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+
+        <h3>Ordered list (numbers)</h3>
+        <ol>
+          <li>Learn HTML</li>
+          <li>Learn CSS</li>
+          <li>Build projects</li>
+        </ol>
+
+        <h3>Nested list</h3>
+        <ul>
+          <li>
+            Frontend
+            <ul>
+              <li>React</li>
+              <li>Vue</li>
+            </ul>
+          </li>
+          <li>
+            Backend
+            <ul>
+              <li>Node.js</li>
+              <li>PHP</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ========== Module 13: Images and Attributes ========== -->
+      <section id="images">
+        <h2>Images and Attributes</h2>
+        <!-- src = where the image is, alt = text if image fails / for screen readers,
+           width/height = size, title = tooltip on hover -->
+        <img
+          src="images/logo.svg"
+          alt="HTML5 logo"
+          width="300"
+          height="200"
+          title="HTML5 logo"
+        />
+        <p>
+          An attribute gives extra info to an element: <code>name="value"</code>
+        </p>
+      </section>
+
+      <!-- ========== Module 14: Hyperlinks ========== -->
+      <section id="links">
+        <h2>Hyperlinks</h2>
+        <ul>
+          <!-- External link. target="_blank" opens a new tab,
+             rel="noopener noreferrer" is a security best practice. -->
+          <li>
+            <a
+              href="https://developer.mozilla.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              >MDN Web Docs (external)</a
+            >
+          </li>
+
+          <!-- Email and phone links -->
+          <li><a href="vegadronak03@gmail.com">Send an email</a></li>
+          <li><a href="302984209489204">Call me</a></li>
+
+          <!-- Image as a link -->
+          <li>
+            <a
+              href="https://www.w3.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="images/logo.svg" alt="Go to W3C" width="100"
+            /></a>
+          </li>
+
+          <!-- Link back to top of the page -->
+          <li><a href="#top-of-page">Back to top</a></li>
+        </ul>
+      </section>
+
+      <!-- ========== Module 15: Structuring our Page ========== -->
+      <section id="structure">
+        <h2>Structuring our Page</h2>
+        <!-- <div> = generic block container, <span> = generic inline container -->
+        <div>
+          <p>
+            This paragraph is inside a <code>div</code>. A
+            <span>span</span> sits inside a line of text.
+          </p>
+        </div>
+
+        <!-- Module 16: Semantic HTML - elements that describe their meaning -->
+        <article>
+          <h3>Article</h3>
+          <p>Self-contained content, like a blog post.</p>
+        </article>
+
+        <aside>
+          <h3>Aside</h3>
+          <p>Side content related to the main content.</p>
+        </aside>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Ronak | HTML Basics Practice</p>
+    </footer>
+  </body>
+</html>
