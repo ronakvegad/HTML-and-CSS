@@ -1,5 +1,7 @@
 # Section 5: Web Design Rules and Framework
 
+Personal use cases
+
 ## Design Rules
 
 - **Consistency**: same fonts, colors, spacing everywhere
