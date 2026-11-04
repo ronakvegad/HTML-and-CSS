@@ -1,10 +1,132 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Omnifood Project</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body></body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Omnifood</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#050505}
+.pp{background:#050505;color:#a6a9ad;font-family:"Geist","Helvetica Neue",Arial,sans-serif;font-size:17px;line-height:1.6}
+.pp *{box-sizing:border-box}
+.pp a{color:inherit;text-decoration:none}
+.wrap{max-width:1360px;margin:0 auto;padding:0 48px}
+.mono{font-family:"Geist Mono",Menlo,monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#8a8d91}
+.btn{display:inline-flex;align-items:center;height:44px;padding:0 22px;border-radius:999px;font-size:15px;font-weight:500;transition:background 120ms ease-out,border-color 120ms ease-out}
+.btn:focus-visible,.nav a:focus-visible{outline:2px solid #f2f2f2;outline-offset:3px}
+.btn-p{background:#f2f2f2;color:#0a0a0a}.btn-p:hover{background:#fff}
+.btn-s{border:1px solid #303030;color:#f2f2f2}.btn-s:hover{border-color:#a6a9ad}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px;border-bottom:1px solid #222}
+.nav-links{display:flex;gap:32px;font-size:15px}
+.nav-links a:hover{color:#f2f2f2}
+.hero{position:relative;background:radial-gradient(ellipse 55% 60% at 72% 0%,rgba(255,255,255,.13),rgba(255,255,255,0) 70%)}
+.hero-grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;padding:96px 0 80px;align-items:start}
+.h1{grid-column:1/9;margin:0;font-weight:400;font-size:clamp(44px,7.6vw,104px);line-height:1;letter-spacing:-.04em;color:#f2f2f2}
+.h1 span{color:#8a8d91}
+.lede{grid-column:1/7;margin:40px 0 32px;max-width:520px}
+.lede b{color:#f2f2f2;font-weight:400}
+.cta-row{grid-column:1/8;display:flex;gap:12px;flex-wrap:wrap}
+.obj{grid-column:9/13;grid-row:1/4;background:linear-gradient(160deg,#171717,#0e0e0e);border:1px solid #222;border-radius:6px;padding:24px;margin-top:8px}
+.row{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid #222;color:#f2f2f2;font-size:15px}
+.row span:last-child{font-family:"Geist Mono",Menlo,monospace;font-size:13px;color:#a6a9ad;white-space:nowrap}
+.live{display:inline-flex;align-items:center;gap:8px}
+.live i{width:6px;height:6px;border-radius:50%;background:#3fd6c6;display:inline-block}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #222;border-bottom:1px solid #222}
+.facts div{padding:28px 24px 28px 0}
+.facts b{display:block;font-weight:400;font-size:32px;letter-spacing:-.03em;color:#f2f2f2;line-height:1.2}
+.sec{padding:120px 0 0}
+.sec-head{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;margin-bottom:56px}
+.h2{grid-column:1/7;margin:0;font-weight:400;font-size:clamp(32px,4vw,56px);line-height:1.05;letter-spacing:-.035em;color:#f2f2f2}
+.sec-head p{grid-column:8/13;margin:0;align-self:end}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.step{border-top:1px solid #303030;padding-top:20px}
+.step h3,.country h3{margin:12px 0 8px;font-weight:400;font-size:22px;letter-spacing:-.02em;color:#f2f2f2}
+.step p,.country p{margin:0;font-size:16px}
+.countries{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:24px}
+.country{background:#0e0e0e;border:1px solid #222;border-radius:6px;padding:28px;display:flex;flex-direction:column;gap:6px}
+.kcal{margin-top:auto;padding-top:24px;color:#f2f2f2;font-size:15px}
+.closing{margin-top:120px;position:relative;background:radial-gradient(ellipse 50% 90% at 50% 100%,rgba(255,255,255,.09),rgba(255,255,255,0) 70%);border-top:1px solid #222;padding:120px 0}
+.h2c{margin:0 0 32px;max-width:820px;font-weight:400;font-size:clamp(40px,6vw,88px);line-height:1;letter-spacing:-.04em;color:#f2f2f2}
+.foot{border-top:1px solid #222;padding:64px 0 48px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:24px}
+.foot a{display:block;padding:4px 0;font-size:15px}.foot a:hover{color:#f2f2f2}
+.foot .mono{margin-bottom:12px}
+@media(max-width:1180px){.wrap{padding:0 32px}.h1,.lede,.cta-row{grid-column:1/13}.obj{grid-column:1/13;grid-row:auto;margin-top:56px;max-width:520px}.sec-head p{grid-column:1/13;margin-top:20px}.h2{grid-column:1/13}}
+@media(max-width:900px){.facts,.steps{grid-template-columns:1fr 1fr}.countries{grid-template-columns:1fr}.foot{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.wrap{padding:0 20px}.nav-links{display:none}.facts,.steps,.foot{grid-template-columns:1fr}.hero-grid{padding:64px 0 56px}.sec{padding-top:80px}.closing{padding:80px 0}}
+</style>
+</head>
+<body>
+<div class="pp">
+<div class="wrap">
+<nav class="nav" aria-label="Main">
+<a href="#top" style="font-size:18px;color:#f2f2f2;letter-spacing:-.02em">Omnifood</a>
+<div class="nav-links"><a href="#how">How it works</a><a href="#countries">Countries</a><a href="#start">Get started</a></div>
+<a class="btn btn-p" href="#start">Build my plan</a>
+</nav>
+</div>
+
+<header class="hero" id="top">
+<div class="wrap">
+<div class="hero-grid">
+<h1 class="h1">Eat well on <span>autopilot.</span></h1>
+<p class="lede"><b>Your personal AI chef.</b> Pick your country and goal, get a weekly healthy meal plan built from local ingredients, with calories on every meal.</p>
+<div class="cta-row"><a class="btn btn-p" href="#start">Build my meal plan</a><a class="btn btn-s" href="#how">See how it works</a></div>
+<aside class="obj" aria-label="Sample meal plan">
+<div class="mono live"><i></i>Plan ready</div>
+<div style="color:#f2f2f2;font-size:22px;letter-spacing:-.02em;margin:12px 0 20px">India · Day 1</div>
+<div class="row"><span>Vegetable poha + curd</span><span>350 kcal</span></div>
+<div class="row"><span>Roti, dal, sabzi, salad</span><span>600 kcal</span></div>
+<div class="row"><span>Roasted chana + buttermilk</span><span>200 kcal</span></div>
+<div class="row"><span>Moong dal khichdi</span><span>500 kcal</span></div>
+<div class="row" style="border-top:1px solid #303030"><span>Total</span><span style="color:#f2f2f2">1,650 kcal</span></div>
+</aside>
+</div>
+<div class="facts">
+<div><b>6</b><span class="mono">Cuisines planned</span></div>
+<div><b>7 days</b><span class="mono">Personal weekly plan</span></div>
+<div><b>1 or 2</b><span class="mono">Meals per day</span></div>
+<div><b>Any time</b><span class="mono">Pause or skip</span></div>
+</div>
+</div>
+</header>
+
+<main>
+<section class="sec" id="how"><div class="wrap">
+<div class="sec-head"><h2 class="h2">Four steps from hungry to handled.</h2><p>Tell us your taste once. We plan, cook and deliver the rest.</p></div>
+<div class="steps">
+<div class="step"><span class="mono">01</span><h3>Tell us your taste</h3><p>Diet, foods you love and hate, and your goal.</p></div>
+<div class="step"><span class="mono">02</span><h3>Get your weekly plan</h3><p>A 7-day menu in seconds. Swap any meal you don’t like.</p></div>
+<div class="step"><span class="mono">03</span><h3>We cook and deliver</h3><p>Partner kitchens prepare meals fresh in selected cities.</p></div>
+<div class="step"><span class="mono">04</span><h3>Just enjoy</h3><p>Pause, skip or change your plan whenever you want.</p></div>
+</div>
+</div></section>
+
+<section class="sec" id="countries"><div class="wrap">
+<div class="sec-head"><h2 class="h2">A different plan for every kitchen.</h2><p>Each country has its own ingredients, portions and calories, so healthy food still tastes like home.</p></div>
+<div class="countries">
+<article class="country"><span class="mono">India</span><h3>Lentils, millets, vegetables</h3><p>Moong dal, chana, paneer, curd, ragi, spinach and turmeric. Veg, vegan and Jain options.</p><div class="kcal mono">Sample day · 1,650 kcal</div></article>
+<article class="country"><span class="mono">Mediterranean</span><h3>Olive oil, fish, legumes</h3><p>Chickpeas, tomatoes, whole wheat pasta, feta and leafy greens.</p><div class="kcal mono">Sample day · 1,800 kcal</div></article>
+<article class="country"><span class="mono">Japan</span><h3>Rice, fish, fermented foods</h3><p>Salmon, tofu, miso, seaweed and edamame.</p><div class="kcal mono">Sample day · 1,650 kcal</div></article>
+</div>
+</div></section>
+</main>
+
+<section class="closing" id="start"><div class="wrap">
+<span class="mono">Start free</span>
+<h2 class="h2c" style="margin-top:16px">Stop worrying about food.</h2>
+<p style="max-width:480px;margin:0 0 32px">Start your 7-day free trial and let Omnifood take care of the rest.</p>
+<a class="btn btn-p" href="#top">Start eating better today</a>
+</div></section>
+
+<footer class="wrap"><div class="foot">
+<div><a href="#top" style="font-size:18px;color:#f2f2f2">Omnifood</a><p style="margin:8px 0 0;max-width:260px;font-size:15px">Eat well on autopilot.</p></div>
+<div><div class="mono">Company</div><a href="#top">About us</a><a href="#top">Careers</a><a href="#top">Press</a></div>
+<div><div class="mono">Support</div><a href="#top">Help center</a><a href="#top">Contact</a><a href="#top">Partner with us</a></div>
+<div><div class="mono">Legal</div><a href="#top">Privacy policy</a><a href="#top">Terms of service</a></div>
+</div>
+<div class="mono" style="padding-bottom:40px">© 2026 Omnifood</div>
+</footer>
+</div>
+</body>
 </html>
