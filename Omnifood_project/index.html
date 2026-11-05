@@ -3,8 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Omnifood Project</title>
+    <title>OmniFood</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Instrument+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <p class="logo">OmniFood</p>
+      <nav class="nav">
+        <a href="#how">How it works</a>
+        <a class="btn" href="#start">Get a plan</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-text">
+        <p class="label">Healthy meals from home</p>
+        <h1>Healthy eating that fits your <em>culture</em></h1>
+        <p class="lead">
+          Pick a country, set a goal, and get a weekly meal plan made from local
+          ingredients — with calories shown for every meal.
+        </p>
+        <a class="btn" href="#start">Build my plan</a>
+      </div>
+      <img
+        class="hero-img"
+        src="../img/food.jpg"
+        width="420"
+        height="560"
+        alt="Bowl of fresh vegetables, herbs, and salad"
+      />
+    </section>
+
+    <section class="panel" id="how">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div>
+          <p class="label">01</p>
+          <h3>Pick a cuisine</h3>
+          <p>Start with India, Mediterranean, or Japan.</p>
+        </div>
+        <div>
+          <p class="label">02</p>
+          <h3>Set your goal</h3>
+          <p>Lose weight, stay balanced, or build muscle.</p>
+        </div>
+        <div>
+          <p class="label">03</p>
+          <h3>Get your week</h3>
+          <p>A 7-day plan with calories for each meal.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="start">
+      <h2>Ready for meals that feel like home?</h2>
+      <p>A personal weekly plan built around the food you already know.</p>
+    </footer>
+  </body>
 </html>
