@@ -46,6 +46,7 @@ a:focus-visible {
 .header {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
   align-items: center;
   padding: 24px 40px;
 }
