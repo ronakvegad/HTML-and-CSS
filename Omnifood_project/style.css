@@ -251,3 +251,34 @@ h1 em {
     transform: none;
   }
 }
+
+/* Smooth scrolling for the #how and #start links */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* so the sticky header doesn't cover the section you jump to */
+}
+
+/* Sticky navigation: change your existing .header rule */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 40px;
+  position: sticky; /* replaces position: relative if you added it earlier */
+  top: 0;
+  z-index: 100;
+  background: var(
+    --dp-color-ground
+  ); /* without this, page content shows through the header */
+}
+
+/* Hamburger hidden on desktop */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: var(--dp-color-ink);
+  cursor: pointer;
+}
